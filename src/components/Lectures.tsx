@@ -15,10 +15,10 @@ import {
 } from 'lucide-react';
 
 interface LecturesProps {
-  onSelectTopicForExplain: (topicTitle: string) => void;
+  setActiveTab: (tab: string) => void;
 }
 
-export const Lectures: React.FC<LecturesProps> = ({ onSelectTopicForExplain }) => {
+export const Lectures: React.FC<LecturesProps> = ({ setActiveTab }) => {
   const [selectedGrade, setSelectedGrade] = useState<9 | 10 | 11 | 12 | 0>(0); // 0 means all
   const [selectedTopic, setSelectedTopic] = useState<Topic | null>(PHYSICS_TOPICS[0]);
 
@@ -167,17 +167,17 @@ export const Lectures: React.FC<LecturesProps> = ({ onSelectTopicForExplain }) =
                 </div>
               )}
 
-              {/* CTA to AI explanation */}
+              {/* CTA to quizzes */}
               <div className="physics-info-box p-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div className="space-y-1">
-                  <span className="text-xs font-bold text-cyan-400">Bu konuyu daha derin mi incelemek istiyorsun?</span>
-                  <p className="text-[11px] text-slate-400">PhysicsLabX Yapay Zeka Fizik Öğretmeni, kazanımlarla uyumlu örnekler anlatmaya hazır.</p>
+                  <span className="text-xs font-bold text-cyan-400">Bu konuyu pekiştirmek ister misin?</span>
+                  <p className="text-[11px] text-slate-400">İlgili testlere geçip ipuçlarıyla adım adım çözüm pratiği yapabilirsin.</p>
                 </div>
                 <button
-                  onClick={() => onSelectTopicForExplain(selectedTopic.title)}
+                  onClick={() => setActiveTab('quizzes')}
                   className="physics-btn-primary"
                 >
-                  <span>Öğretmene Sor</span>
+                  <span>Teste Geç</span>
                   <ArrowRight className="h-3 w-3" />
                 </button>
               </div>

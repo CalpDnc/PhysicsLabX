@@ -15,9 +15,9 @@ Fizik kurallarını gerçek zamanlı matematiksel modellerle simüle eden labora
 - **Lazer ve Kırılma İndisi**: Farklı ortamlar arası ışık geçişlerini, kritik sınır açılarını ve *Lazer Kromatik Dispersiyon Kaymasını* inceleyin.
 - Diğer mekanik, elektromanyetizma ve dalga simülasyonları.
 
-### 2. 🧠 Gemini Destekli Yapay Zekâ Fizik Mentörü (`AITutor.tsx`)
-- Fizik formülleri, teorileri ve adımlı soru çözümleri için özelleştirilmiş, gerçek zamanlı AI asistanı.
-- Konu Anlatımı üzerinden seçilen konuları doğrudan asistan bağlamına aktarabilme desteği.
+### 2. 📘 Adım Adım Konu Pekiştirme Akışı
+- Konu anlatımı ekranından doğrudan ölçme ekranına geçerek ilgili sorularla pratik yapabilirsin.
+- Sorularda hazır ipuçlarıyla çözüm mantığını güçlendiren, müfredata uyumlu bir öğrenme akışı sunar.
 
 ### 3. 📝 Konu Anlatımları ve Formül Kartları (`Lectures.tsx`)
 - MEB müfredatıyla %100 uyumlu, görsel şemalarla desteklenmiş 11. ve 12. Sınıf fizik konuları.
@@ -60,9 +60,9 @@ npm install
 ```
 
 ### 3. Çevre Değişkenleri Kurulumu
-Projenin kök dizininde bulunan `.env.example` dosyasını `.env` olarak kopyalayın ve asistan özellikleri için Gemini API anahtarınızı girin:
+Projenin kök dizininde bulunan `.env.example` dosyasını `.env` olarak kopyalayın:
 ```env
-GEMINI_API_KEY=your_gemini_api_key_here
+NODE_ENV=development
 ```
 
 ### 4. Geliştirme Sunucusunu Başlatın

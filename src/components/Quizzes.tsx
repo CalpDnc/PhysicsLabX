@@ -145,28 +145,10 @@ export const Quizzes: React.FC<QuizzesProps> = ({ onSuccessEarned }) => {
     setActiveHint(null);
 
     try {
-      const response = await fetch('/api/gemini/tutor', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          message: `Şu fizik sorusu için doğrudan cevabı söylemeden bana pedagojik, açıklayıcı bir ipucu verir misiniz?\nSoru: ${currentQuestion.text}\nHint İpucu: ${currentQuestion.hint}`,
-          isHintRequest: true,
-          topicContext: currentQuestion.topicId
-        }),
-      });
-
-      if (!response.ok) throw new Error("Yapay zeka öğretmenine şu an ulaşılamıyor.");
-      const data = await response.json();
-      if (data.success) {
-        setActiveHint(data.text);
-      } else {
-        throw new Error(data.error);
-      }
+      setActiveHint(`İpucu: ${currentQuestion.hint}`);
     } catch (err: any) {
       console.error(err);
-      setActiveHint(`Öğretmen İpucu: ${currentQuestion.hint}`);
+      setActiveHint(`İpucu: ${currentQuestion.hint}`);
     } finally {
       setHintLoading(false);
     }
@@ -328,7 +310,7 @@ export const Quizzes: React.FC<QuizzesProps> = ({ onSuccessEarned }) => {
                 </div>
                 <div className="text-right">
                   <p className="border-t border-slate-800 pt-1 text-slate-300 font-serif">PhysicsLabX Bilim Kurulu</p>
-                  <p className="text-[7px]">Yapay Zeka Onay Mührü</p>
+                  <p className="text-[7px]">Akademik Başarı Onayı</p>
                 </div>
               </div>
             </div>
@@ -432,16 +414,16 @@ export const Quizzes: React.FC<QuizzesProps> = ({ onSuccessEarned }) => {
             </div>
           </div>
 
-          {/* AI Helper column */}
+          {/* Hint helper column */}
           <div className="lg:col-span-4 space-y-4">
-            {/* Real Teacher's Clue trigger */}
+            {/* Clue trigger */}
             <div className="physics-glass-card p-5 space-y-4">
               <h3 className="text-xs font-bold text-white flex items-center gap-1.5 uppercase tracking-wider">
                 <Sparkles className="h-4 w-4 text-cyan-400" />
-                <span>PhysicsLabX AI İpucu</span>
+                <span>PhysicsLabX İpucu</span>
               </h3>
               <p className="text-[11px] text-slate-400 leading-normal">
-                Bu soruda zorlandın mı? Yapay Zeka Öğretmeninden doğrudan cevabı söylemeden seni çözüme ulaştıracak akıllı bir ipucu isteyebilirsin.
+                Bu soruda zorlandın mı? Doğrudan cevabı söylemeden seni çözüme yaklaştıracak ipucunu açabilirsin.
               </p>
 
               {activeHint ? (
@@ -464,7 +446,7 @@ export const Quizzes: React.FC<QuizzesProps> = ({ onSuccessEarned }) => {
                   ) : (
                     <>
                       <HelpCircle className="h-4 w-4 text-cyan-400" />
-                      <span>Öğretmenden İpucu İste</span>
+                      <span>İpucu Göster</span>
                     </>
                   )}
                 </button>

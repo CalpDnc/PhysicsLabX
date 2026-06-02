@@ -10,7 +10,6 @@ import {
   Atom, 
   Calculator, 
   Tv, 
-  Bot, 
   BrainCircuit,
   Sun,
   Moon
@@ -37,7 +36,6 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'simulations', label: 'Deney Laboratuvarı', icon: Atom },
     { id: 'quizzes', label: 'Ölçme & Değerlendirme', icon: BrainCircuit },
     { id: 'videos', label: 'Videolu Anlatım', icon: Tv },
-    { id: 'tutor', label: 'AI Fizik Öğretmeni', icon: Bot },
   ];
 
   return (

@@ -10,7 +10,6 @@ import { Lectures } from './components/Lectures';
 import { Simulations } from './components/Simulations';
 import { Quizzes } from './components/Quizzes';
 import { Videos } from './components/Videos';
-import { AITutor } from './components/AITutor';
 import { 
   GraduationCap, 
   HelpCircle, 
@@ -21,7 +20,6 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<string>('dashboard');
   const [streak, setStreak] = useState<number>(3); // Standard default mock score
   const [completedQuizzes, setCompletedQuizzes] = useState<number>(1);
-  const [explainTopicContext, setExplainTopicContext] = useState<string>('');
   
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
     if (typeof window !== 'undefined') {
@@ -47,11 +45,6 @@ export default function App() {
     }
   }, [theme]);
 
-  const handleSelectTopicForExplain = (topicTitle: string) => {
-    setExplainTopicContext(topicTitle);
-    setActiveTab('tutor');
-  };
-
   const handleSuccessEarned = () => {
     setCompletedQuizzes((prev) => prev + 1);
     // 50% chance to award extra streak day
@@ -70,12 +63,7 @@ export default function App() {
       {/* Top Navbar */}
       <Navbar 
         activeTab={activeTab} 
-        setActiveTab={(tab) => {
-          setActiveTab(tab);
-          if (tab !== 'tutor') {
-            setExplainTopicContext(''); // reset topic when moving away from AI
-          }
-        }} 
+        setActiveTab={setActiveTab}
         streak={streak} 
         theme={theme}
         toggleTheme={toggleTheme}
@@ -91,12 +79,11 @@ export default function App() {
             completedQuizzes={completedQuizzes} 
             activeTab={activeTab}
             setActiveTab={setActiveTab}
-            onSelectTopicForExplain={handleSelectTopicForExplain}
           />
         )}
 
         {activeTab === 'lectures' && (
-          <Lectures onSelectTopicForExplain={handleSelectTopicForExplain} />
+          <Lectures setActiveTab={setActiveTab} />
         )}
 
         {activeTab === 'simulations' && (
@@ -109,10 +96,6 @@ export default function App() {
 
         {activeTab === 'videos' && (
           <Videos />
-        )}
-
-        {activeTab === 'tutor' && (
-          <AITutor initialTopic={explainTopicContext} />
         )}
 
       </main>

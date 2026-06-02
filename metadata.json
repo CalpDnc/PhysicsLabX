@@ -1,6 +1,6 @@
 {
   "name": "PhysicsLabX",
-  "description": "MEB müfredatına ve Türkiye Yüzyılı Maarif Modeline uygun interaktif fizik eğitim, deney simülasyonu ve yapay zeka destekli ölçme portalı.",
+  "description": "MEB müfredatına ve Türkiye Yüzyılı Maarif Modeline uygun interaktif fizik eğitim, deney simülasyonu ve ölçme portalı.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }

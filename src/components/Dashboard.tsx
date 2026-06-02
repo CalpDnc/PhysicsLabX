@@ -22,14 +22,12 @@ interface DashboardProps {
   completedQuizzes: number;
   activeTab: string;
   setActiveTab: (tab: string) => void;
-  onSelectTopicForExplain: (topicTitle: string) => void;
 }
 
 export const Dashboard: React.FC<DashboardProps> = ({ 
   streak, 
   completedQuizzes, 
-  setActiveTab, 
-  onSelectTopicForExplain 
+  setActiveTab
 }) => {
   return (
     <div className="space-y-8 select-none">
@@ -48,7 +46,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
             <span className="text-cyan-400">Fizik Dünyasını Keşfet</span>
           </h1>
           <p className="text-slate-300 text-sm md:text-base leading-relaxed font-medium">
-            PhysicsLabX Portalı, Millî Eğitim Bakanlığı yeni öğretim programıyla tam uyumlu, sarmal yaklaşımı temel alan, etkileşimli deney simülasyonları ve yapay zeka destekli rehber öğretmeni barındıran milli eğitim kapınızdır.
+            PhysicsLabX Portalı, Millî Eğitim Bakanlığı yeni öğretim programıyla tam uyumlu, sarmal yaklaşımı temel alan ve etkileşimli deney simülasyonlarıyla öğrenmeyi pekiştiren milli eğitim kapınızdır.
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
             <button
@@ -127,7 +125,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         </div>
       </div>
 
-      {/* AI banner highlight trigger */}
+      {/* Study support banner */}
       <div className="physics-glass-card p-6 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="space-y-1">
           <h4 className="text-sm font-extrabold text-white flex items-center gap-1.5">
@@ -135,14 +133,14 @@ export const Dashboard: React.FC<DashboardProps> = ({
             <span>Kafana Takılan Bir Fizik Problemi mi Var?</span>
           </h4>
           <p className="text-xs text-slate-400 font-semibold">
-            Formülleri, soruları veya kavramları "PhysicsLabX Akademik Destek Rehberine" sorarak anında, sarmal anlatımlı cevaplar al.
+            Konu anlatımı ve ölçme ekranlarıyla adım adım ilerleyip yanlış yaptığın sorularda hazır ipuçlarıyla çözüm stratejisi geliştir.
           </p>
         </div>
         <button
-          onClick={() => setActiveTab('tutor')}
+          onClick={() => setActiveTab('quizzes')}
           className="physics-btn-primary shrink-0"
         >
-          Çözüm Öğretmenine Danış
+          Teste Geç
         </button>
       </div>
     </div>
