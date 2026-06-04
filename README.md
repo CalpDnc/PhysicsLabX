@@ -1,5 +1,9 @@
 # 🪐 PhysicsLabX: İnteraktif Fizik Simülasyonu ve Öğrenme Platformu
 
+## 🌍 Canlı Site
+
+https://calpdnc.github.io/PhysicsLabX/
+
 **PhysicsLabX**, Türkiye Yüzyılı Maarif Modeli fizik müfredatı göz önünde bulundurularak kurgulanmış; öğrencilerin, öğretmenlerin ve fizik meraklılarının karmaşık fiziksel olguları görselleştirip deneyimleyebileceği interaktif bir öğrenme ve laboratuvar platformudur.
 
 Kullanıcı arayüzü son derece geniş ekranlara adanmış (**1650px maksimum genişlik**), modern bento-grid yerleşimine sahip ve **Dinamik Aydınlık / Karanlık Tema** desteğiyle optimize edilmiştir.
