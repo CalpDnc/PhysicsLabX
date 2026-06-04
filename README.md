@@ -1,6 +1,6 @@
-# 🪐 PhysicsLabX: İnteraktif Fizik Simülasyonu ve Yapay Zekâ Eğitmeni
+# 🪐 PhysicsLabX: İnteraktif Fizik Simülasyonu ve Öğrenme Platformu
 
-**PhysicsLabX**, Türkiye Yüzyılı Maarif Modeli fizik müfredatı göz önünde bulundurularak kurgulanmış; öğrencilerin, öğretmenlerin ve fizik meraklılarının karmaşık fiziksel olguları görselleştirip deneyimleyebileceği, yapay zekâ destekli üst düzey bir interaktif öğrenme ve laboratuvar platformudur.
+**PhysicsLabX**, Türkiye Yüzyılı Maarif Modeli fizik müfredatı göz önünde bulundurularak kurgulanmış; öğrencilerin, öğretmenlerin ve fizik meraklılarının karmaşık fiziksel olguları görselleştirip deneyimleyebileceği interaktif bir öğrenme ve laboratuvar platformudur.
 
 Kullanıcı arayüzü son derece geniş ekranlara adanmış (**1650px maksimum genişlik**), modern bento-grid yerleşimine sahip ve **Dinamik Aydınlık / Karanlık Tema** desteğiyle optimize edilmiştir.
 
@@ -40,7 +40,7 @@ Fizik kurallarını gerçek zamanlı matematiksel modellerle simüle eden labora
 - **Stil Yönetimi**: Tailwind CSS v4 & Özel Glassmorphic Animasyon Katmanları
 - **İkon Seti**: Lucide React
 - **Veri Görselleştirme**: Recharts & D3.js (Grafikler ve Canlı Analitikler için)
-- **Sunucu & Derleme**: Node.js & Express (Full-Stack mimari için Vite Middleware entegrasyonu)
+- **Yayınlama**: GitHub Pages uyumlu statik Vite çıktısı
 
 ---
 
@@ -69,13 +69,27 @@ NODE_ENV=development
 ```bash
 npm run dev
 ```
-Sunucu varsayılan olarak `http://localhost:3000` portunda çalışacaktır.
+Vite geliştirme sunucusu varsayılan olarak `http://localhost:5173` adresinde açılır.
 
 ### 5. Production Yapısını Oluşturma ve Çalıştırma
 ```bash
 npm run build
-npm start
+npm run preview
 ```
+
+Preview sunucusu varsayılan olarak `http://localhost:4173` adresinde açılır.
+
+### 6. GitHub Pages Yayınlama
+Bu proje GitHub Pages için hazırdır. `main` dalına gönderilen her commit şu workflow ile otomatik yayınlanır:
+
+```text
+.github/workflows/deploy.yml
+```
+
+GitHub üzerinde bir kez şu ayarı açmanız gerekir:
+- Repository Settings > Pages > Build and deployment > Source = GitHub Actions
+
+Repository adı `PhysicsLabX` olduğu için üretim build'inde otomatik olarak doğru base path kullanılır.
 
 ---
 
